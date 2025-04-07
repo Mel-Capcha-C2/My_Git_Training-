@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Github
 ## 1. SSH Key Generator
 PuTTYgen is a key generator tool for creating pairs of public and private SSH keys.
