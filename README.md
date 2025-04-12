@@ -147,6 +147,34 @@ We can test our connection here:
 ssh -T git@github.com
 ```
 
+### 6.1.3 Github CLI
+
+Install the CLI from https://github.com/cli/cli#installation
+
+Linux (Ubuntu)
+
+```sh
+(type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
+	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+  && out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+  && cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+	&& sudo apt update \
+	&& sudo apt install gh -y
+```
+
+Windows
+
+```sh
+winget install --id GitHub.cli
+```
+
+```sh
+gh auth login
+gh repo clone Mel-Capcha-C2/My_Git_Training- 
+```
+
 
 ## 6.2 Commands
 
@@ -204,7 +232,7 @@ When we want to push a repo to our remote origin
 git push
 ```
 
-### 6.2.5 Gitconfig file
+### 6.2.7 Gitconfig file
 
 The gitconfig file is what stores global configurations for git such as email, name, editor and more.
 
@@ -234,4 +262,25 @@ To see the possible values for $EDITOR see https://git-scm.com/book/en/v2/Append
 
 ```sh
 git config --global core.editor "code --wait"
+```
+
+### 6.2.8 Branch
+
+List of branches
+
+```sh
+git branch
+git branch -a
+```
+
+Create a new branch
+
+```sh
+git branch $branch_name
+```
+
+Checkout the branch
+
+```sh
+git checkout dev
 ```
