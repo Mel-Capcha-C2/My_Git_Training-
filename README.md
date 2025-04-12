@@ -284,3 +284,6 @@ Checkout the branch
 ```sh
 git checkout dev
 ```
+
+Git checkout dev changes
+Hi dev
