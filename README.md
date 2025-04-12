@@ -123,6 +123,31 @@ git clone https://github.com/Mel-Capcha-C2/My_Git_Training-.git
 cd My_Git_Training-
 ```
 
+> You'll need to generate a Personal Access Token (PAT)
+https://github.com/settings/tokens
+
+You will use the PAT as your password when you login
+
+### 6.1.2 SSH
+
+```sh
+git clone git@github.com:Mel-Capcha-C2/My_Git_Training-.git
+```
+
+We will need to create our own SSH rsa key pair
+
+```sh
+ssh-keygen -t rsa
+```
+
+If you create a non default kwy you might need to add it (View Section 2).
+
+We can test our connection here:
+```sh
+ssh -T git@github.com
+```
+
+
 ## 6.2 Commands
 
 ### 6.2.1 Add
@@ -157,6 +182,26 @@ When we want to commit code we can write git commit which will open the commit e
 
 ```sh
 git commit
+```
+
+```sh
+git commit -m "ADD MESSAGE"
+```
+
+### 6.2.5 Log
+
+Will show recent git commits to the git tree
+
+```sh
+git log
+```
+
+### 6.2.6 Push
+
+When we want to push a repo to our remote origin
+
+```sh
+git push
 ```
 
 ### 6.2.5 Gitconfig file
