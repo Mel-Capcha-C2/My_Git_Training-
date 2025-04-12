@@ -287,3 +287,6 @@ git checkout dev
 
 Git checkout dev changes
 Hi dev
+
+Checkout main Changes
+Hi main
