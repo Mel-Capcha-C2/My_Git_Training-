@@ -72,13 +72,42 @@ Host github.com
   IdentityFile $env:USERPROFILE/.ssh/github_rsa
   IdentitiesOnly yes
 ```
-# 4. Subheader
 
-Watch Tutorial on Youtube.
+## 3.3 Multiple accounts with different SSH keys
 
-# 5. Local Development
+If you have multiple accounts you would need to edit your SSH config file every time you switch accounts. To avoid that, you can configure multiple SSH identities for different GitHub accounts by using SSH aliases in your ~/.ssh/config.
 
-# 5.1 Open index.html in your browser
+```sh
+# Primary GitHub account
+Host MC1
+  HostName github.com
+  User git
+  IdentityFile C:/Users/Mel_C/.ssh/github_rsa
+  IdentitiesOnly yes
+
+# Secondary GitHub account
+Host MC2
+  HostName github.com
+  User git
+  IdentityFile C:/Users/Mel_C/.ssh/github_second_id_rsa
+  IdentitiesOnly yes
+```
+
+When you clone or add a remote, instead of using github.com, use the alias (MC1 or MC2):
+
+```sh
+# Clone a repo with the primary account
+git clone git@MC1:Mel-Capcha-C/My_Git_Training-.git
+
+# Clone a repo with the secondary account
+git clone git@MC2:Mel-Capcha-C2/My_Git_Training-.git
+```
+
+If you've already cloned the repo using git@github.com:... (default), you can change the remote URL:
+
+```sh
+git remote set-url origin git@MC2:Mel-Capcha-C2/My_Git_Training-.git
+```
 
 # 6. Github dev
 If you add the .dev ending instead of .com to the repo link, e.g
