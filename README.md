@@ -175,64 +175,7 @@ gh auth login
 gh repo clone Mel-Capcha-C2/My_Git_Training- 
 ```
 
-
-## 6.2 Commands
-
-### 6.2.1 Add
-
-When we want to stage changes that will be included in the commit.
-We use the period . to add all files.
-
-```sh
-git add Readme.md
-git add .
-```
-
-### 6.2.2 Reset
-
-Reset allows you to move Staged changes to be unstaged.
-
-```sh
-git add .
-git reset
-```
-
-### 6.2.3 Status
-Shows you what files will or will not be commited.
-
-```sh
-git status
-```
-
-### 6.2.4 Commit
-
-When we want to commit code we can write git commit which will open the commit edit message in the editor of choice.
-
-```sh
-git commit
-```
-
-```sh
-git commit -m "ADD MESSAGE"
-```
-
-### 6.2.5 Log
-
-Will show recent git commits to the git tree
-
-```sh
-git log
-```
-
-### 6.2.6 Push
-
-When we want to push a repo to our remote origin
-
-```sh
-git push
-```
-
-### 6.2.7 Gitconfig file
+## 6.2 Gitconfig file
 
 The gitconfig file is what stores global configurations for git such as email, name, editor and more.
 
@@ -264,7 +207,64 @@ To see the possible values for $EDITOR see https://git-scm.com/book/en/v2/Append
 git config --global core.editor "code --wait"
 ```
 
-### 6.2.8 Branch
+
+## 6.3 Commands
+
+### 6.3.1 Add
+
+When we want to stage changes that will be included in the commit.
+We use the period . to add all files.
+
+```sh
+git add Readme.md
+git add .
+```
+
+### 6.3.2 Reset
+
+Reset allows you to move Staged changes to be unstaged.
+
+```sh
+git add .
+git reset
+```
+
+### 6.3.3 Status
+Shows you what files will or will not be commited.
+
+```sh
+git status
+```
+
+### 6.3.4 Commit
+
+When we want to commit code we can write git commit which will open the commit edit message in the editor of choice.
+
+```sh
+git commit
+```
+
+```sh
+git commit -m "ADD MESSAGE"
+```
+
+### 6.3.5 Log
+
+Will show recent git commits to the git tree
+
+```sh
+git log
+```
+
+### 6.3.6 Push
+
+When we want to push a repo to our remote origin
+
+```sh
+git push
+```
+
+### 6.3.7 Branch
 
 List of branches
 
@@ -290,3 +290,22 @@ Hi dev
 
 Checkout main Changes
 Hi main
+
+### 6.3.8 Remote
+
+We can add remote but often you will just add remote via upstream when adding a branch
+
+```sh
+git remote add ...
+git branch -u origin new-feature
+```
+
+### 6.3.9 Merging
+
+The following commands will merge main into HEAD (dev).
+
+```sh
+git checkout dev
+git merge main
+```
+ 
