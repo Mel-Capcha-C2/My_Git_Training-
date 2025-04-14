@@ -309,3 +309,24 @@ git checkout dev
 git merge main
 ```
  
+### 6.3.10 Stashing
+
+```sh
+pop [--index] [-q|--quiet] [<stash>]
+```
+
+Remove a single stashed state from the stash list and apply it on top of the current working tree state.
+
+```sh
+apply [--index] [-q|--quiet] [<stash>]
+```
+
+Like pop, but do not remove the state from the stash list.
+
+```sh
+git stash list
+git stash
+git stash save $NAME
+git stash apply
+git stash pop
+```
